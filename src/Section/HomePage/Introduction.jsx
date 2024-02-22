@@ -13,7 +13,7 @@ const Introduction = () => {
       <h1 className="text-4xl font-semibold text-primary-500">Udah Pernah Ke Sumatera Utara Belum?</h1>
       <Splide
         options={{
-          rewind: true,
+     
           focus: "center",
           perPage: 1,
           slideFocus: true,

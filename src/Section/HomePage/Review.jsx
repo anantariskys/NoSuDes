@@ -46,11 +46,15 @@ const Review = () => {
           perMove: 1,
           arrows: false,
           gap: "30px",
+          padding:{
+            right: "100px",
+            left:"100px"
+          }
         }}
         
       >
         {data.map((item) => (
-          <SplideSlide key={item.id} className="">
+          <SplideSlide key={item.id}>
             <div className="card card-compact w-full bg-baseColor-500">
               <figure className="relative">
                 <label className="swap absolute top-2 right-2 h-14 aspect-square rounded-full bg-neutral-100">

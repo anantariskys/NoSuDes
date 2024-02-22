@@ -39,7 +39,7 @@ const Favorite = () => {
           </div>
         ))}
       </div>
-      <p className="font-Poppins text-lg font-semibold text-black text-center mb-20 mt-20">
+      <p className="font-Poppins text-lg font-semibold text-primary-500 text-center mb-20 mt-20">
         Ingin Menjelajah yang Lain? <span>Klik Disini</span>
       </p>
       <hr className="border-secondary-500 w-[90%] mx-auto" />

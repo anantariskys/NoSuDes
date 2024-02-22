@@ -50,14 +50,18 @@ const Recomendation = () => {
           padding: "10px",
           perMove: 1,
           arrows: false,
-          gap: "30px",
+          gap: "15px",
+          padding:{
+            right: "50px",
+            left:"50px"
+          }
         }}
         
       >
         {data.map((item,index) => (
           <SplideSlide key={index} >
             <div className="card w-full aspect-[4/5] bg-base-100 relative " style={{ backgroundImage: `url(${artikelImage})`, backgroundSize: "contain" }}>
-              <div className="w-full h-1/4 px-3 items-center absolute font-Poppins text-primary-500 bg-neutral-300 bottom-0 left-0 opacity-75 flex">
+              <div className="w-full h-1/4 px-3 items-center absolute font-Poppins rounded-b-xl text-primary-500 bg-neutral-300 bottom-0 left-0 opacity-75 flex">
                 <h3 className="w-5/6  font-semibold text-sm ">{item.judul}</h3>
                 <FontAwesomeIcon icon={faArrowRight} size='2x'/>
 

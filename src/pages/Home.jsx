@@ -14,7 +14,7 @@ import Review from "../Section/HomePage/Review";
 const Home = () => {
   return (
     <div className="bg-[#f1f1f1]">
-      <Navbar />
+     
       <HeroCarousel/>
       <div className="h-44 w-full bg-[#F1F1F1]"></div>
       <Introduction/>
@@ -25,7 +25,7 @@ const Home = () => {
       <Recomendation/>
       <Promosi/>
  
-      <Footer/>
+
     </div>
   );
 };

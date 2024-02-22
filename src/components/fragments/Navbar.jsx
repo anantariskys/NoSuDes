@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../public/logoUtama.png";
 const Navbar = () => {
   return (
@@ -35,16 +36,16 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-Poppins text-primary-500 px-1">
           <li>
-            <a className="text-lg font-semibold">Wisata</a>
+            <Link to={'/wisata'} className="text-lg font-semibold">Wisata</Link>
           </li>
           <li>
-            <a className="text-lg font-semibold">Aktivitas</a>
+            <Link className="text-lg font-semibold">Aktivitas</Link>
           </li>
           <li>
-            <a className="text-lg font-semibold">Cerita</a>
+            <Link className="text-lg font-semibold">Cerita</Link>
           </li>
           <li>
-            <a className="text-lg font-semibold">Artikel</a>
+            <Link className="text-lg font-semibold">Artikel</Link>
           </li>
           <li>
             <select className="border-none text-lg font-semibold bg-transparent focus:ring-0 ">
