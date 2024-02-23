@@ -1,4 +1,4 @@
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import bukitImage from "../../../public/bukit.png";
 import "@splidejs/react-splide/css";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -33,7 +33,7 @@ const data = [
 
 const Review = () => {
   return (
-    <div className="w-full">
+    <section className="w-full">
       <h1 className="font-bold text-4xl mb-28 text-primary-500 font-Poppins text-center">Lihat Review Traveler Lain</h1>
       <Splide
         options={{
@@ -86,7 +86,7 @@ const Review = () => {
       </Splide>
       <p className="font-Poppins  text-lg font-semibold text-primary-500 mt-20 text-right px-28">Bagikan Ceritamu Juga <span><FontAwesomeIcon icon={faArrowRight}/></span></p>
       <hr className="border-secondary-500 w-[90%] mx-auto mt-20 mb-20" />
-    </div>
+    </section>
   );
 };
 

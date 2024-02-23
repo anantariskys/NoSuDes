@@ -10,6 +10,7 @@ import Home from './pages/Home.jsx';
 import Wisata from './pages/Wisata';
 import PageLayout from './components/layouts/PageLayout';
 import WisataDetail from './pages/WisataDetail';
+import Aktivitas from './pages/Aktivitas';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,6 +20,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         element={
           <PageLayout>
             <Home />
+          </PageLayout>
+        } />
+        <Route path="/aktivitas" 
+        element={
+          <PageLayout>
+            <Aktivitas/>
           </PageLayout>
         } />
         <Route path="/wisata" 

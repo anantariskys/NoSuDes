@@ -11,13 +11,13 @@
   }
 
 
-  .splide__slide {
+  /* .splide__slide {
     opacity: 0.8;
   }
   
   .splide__slide.is-active {
     opacity: 1;
 
-  }
+  } */
   .splide__track--nav > .splide__list > .splide__slide.is-active {
     border: none !important; }

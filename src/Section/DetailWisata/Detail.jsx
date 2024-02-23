@@ -2,103 +2,62 @@ import { faFacebook, faInstagram, faXTwitter } from "@fortawesome/free-brands-sv
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBicycle, faBookmark as faBookMarkSolid, faCalendarDays, faCar, faLocationDot, faMotorcycle, faPhone, faSackDollar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import React, { useEffect, useRef } from "react";
-import thumbnailImage1 from "../../../public/thumbnailCarousel1.png";
-import thumbnailImage2 from "../../../public/thumbnailCarousel2.png";
-import thumbnailImage3 from "../../../public/thumbnailCarousel3.png";
-import thumbnailImage4 from "../../../public/thumbnailCarousel4.png";
-import thumbnailImage5 from "../../../public/thumbnailCarousel5.png";
 
-const data = [
+import React, { useEffect, useRef } from "react";
+import ThumbnailCarousel from "../../components/fragments/ThumbnailCarousel";
+
+const jamOperasional = [
   {
-    gambar: thumbnailImage1,
+    hari: "Senin",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage2,
+    hari: "Selasa",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage3,
+    hari: "Rabu",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage4,
+    hari: "Kamis",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage5,
+    hari: "Jumat",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage1,
+    hari: "Sabtu",
+    jam: "00:00 - 23:59 WIB",
   },
   {
-    gambar: thumbnailImage2,
-  },
-  {
-    gambar: thumbnailImage3,
-  },
-  {
-    gambar: thumbnailImage4,
-  },
-  {
-    gambar: thumbnailImage5,
+    hari: "Minggu",
+    jam: "00:00 - 23:59 WIB",
   },
 ];
 
+const artikel = `<p>
+Pulau Kalimantung Na Menek bisa dibilang sebagai Maldieves milik Indonesia. Keindahan dan suasana yang ada di pulau tersebut bisa menandingi pesona dari Maldieves di Asia Selatan sana.  Pulau Kalimantung termasuk pulau yang tidak berpenghuni dan dikelilingi oleh pantai yang dangkal membuat Traveler jadi betah dan merasa cukup aman untuk bermain - main disana.
+</p>
+<p>
+Untuk sampai ke pulau Kalimantung Na Menek,  disarankan untuk menyeberang dari pantai terdekat seperti pantai Pandan atau Pantai SIbolga dengan menyewa perahu penyeberangan sekitar Rp 1.500.000 dalam waktu 1,5 - 2 jam perjalanan. Itu sebabnya akan lebih hemat jika pergi ke pulau tersebut secara beramai - ramai. Jika Traveler ingin pergi dari Ibukota Medan, maka akan memakan waktu 8 jam 30 menit tanpa tol dan 2 jam perjalanan lewat tol. 
+</p>
+<p>
+Traveler bisa sekaligus melakukan snorkeling dengan biaya Rp 50.000. Biasanya dengan jasa trip tertentu bisa mendapatkan paket sewa perahu sekaligus snorkeling, jadi hati - hati dalam memilih jasa Trip ya Traveler!
+</p>`;
+
 const Detail = () => {
-  const mainCarousel = useRef(null);
-  const thumbnailCarousel = useRef(null);
-
-  useEffect(() => {
-    if (mainCarousel.current && thumbnailCarousel.current) {
-      mainCarousel.current.sync(thumbnailCarousel.current.splide);
-    }
-  }, []);
-
   return (
     <section>
       <main className="w-5/6  bg-primary-50 flex rounded-lg mx-auto py-10 px-10 gap-10">
         <div className="w-3/5 ">
-          <Splide
-            id="main-carousel"
-            ref={mainCarousel}
-            options={{
-              type: "fade",
-              rewind: true,
-              pagination: false,
-              arrows: false,
-              drag: false,
-            }}
-            className="mb-5"
-          >
-            {data.map((item, index) => (
-              <SplideSlide key={index}>
-                <img src={item.gambar} className="rounded-lg" alt="imageCarousel" />
-              </SplideSlide>
-            ))}
-          </Splide>
-          <Splide
-            id="thumbnail-carousel"
-            ref={thumbnailCarousel}
-            options={{
-              gap: 10,
-
-              pagination: false,
-              isNavigation: true,
-
-              perPage: 4,
-              breakpoints: {
-                600: {
-                  fixedWidth: 60,
-                  fixedHeight: 44,
-                },
-              },
-            }}
-          >
-            {data.map((item, index) => (
-              <SplideSlide key={index}>
-                <img src={item.gambar} className="rounded-lg" alt="thumbnailCarousel" />
-              </SplideSlide>
-            ))}
-          </Splide>
+          <ThumbnailCarousel />
+          <div className="mt-20  font-Poppins">
+            <h4 className="text-2xl text-primary-700 font-semibold">Detail Tempat</h4>
+            <hr className="border-primary-500 my-3 " />
+            <article className="flex flex-col gap-5 text-sm font-semibold text-primary-700 text-justify" dangerouslySetInnerHTML={{ __html: artikel }}></article>
+          </div>
         </div>
         <aside className="w-2/5 ">
           <div className="bg-baseColor-500 rounded-lg px-4 pt-10 w-full">
@@ -132,49 +91,15 @@ const Detail = () => {
                       <FontAwesomeIcon icon={faCalendarDays} />
                       <p className="font-semibold w-full text-base">Jam Operasional</p>
                     </summary>
-                    <ul className="gap-0">
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Senin</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Selasa</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Rabu</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Kamis</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Jumat</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Sabtu</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between text-sm text-primary-300">
-                          <p>Minggu</p>
-                          <p>00:00 - 23:59 WIB</p>
-                        </div>
-                      </li>
+                    <ul>
+                      {jamOperasional.map((item, index) => (
+                        <li key={index}>
+                          <div className="flex justify-between text-sm text-primary-300">
+                            <p>{item.hari}</p>
+                            <p>{item.jam}</p>
+                          </div>
+                        </li>
+                      ))}
                     </ul>
                   </details>
                 </li>
@@ -187,78 +112,74 @@ const Detail = () => {
                     </summary>
                     <div className="overflow-x-auto">
                       <table className="table text-sm font-normal">
-                     
                         <thead>
                           <tr>
                             <th></th>
                             <th className="text-primary-300 text-sm">Dewasa</th>
                             <th className="text-primary-300 text-sm">Anak - anak</th>
-                           
                           </tr>
                         </thead>
                         <tbody className="">
-                           <tr>
+                          <tr>
                             <th className="text-primary-300 text-sm">Weekday</th>
                             <td>Rp 5.000</td>
                             <td>Rp 5.000</td>
-                           
                           </tr>
-                       
+
                           <tr>
                             <th className="text-primary-300 text-sm">Weekend</th>
                             <td>Rp 10.000</td>
                             <td>Rp 10.000</td>
-                         
                           </tr>
                         </tbody>
                       </table>
                       <hr />
                       <table className="table text-sm font-normal">
-                        {/* head */}
                         <thead>
                           <tr>
                             <th></th>
                             <th className="text-primary-300 text-sm">
-                                <FontAwesomeIcon icon={faCar}/>
+                              <FontAwesomeIcon icon={faCar} />
                             </th>
                             <th className="text-primary-300 text-sm">
-                                <FontAwesomeIcon icon={faMotorcycle}/>
+                              <FontAwesomeIcon icon={faMotorcycle} />
                             </th>
                             <th className="text-primary-300 text-sm">
-                                <FontAwesomeIcon icon={faBicycle}/>
+                              <FontAwesomeIcon icon={faBicycle} />
                             </th>
                           </tr>
                         </thead>
-                        <tbody >
-                           <tr>
+                        <tbody>
+                          <tr>
                             <th className="text-primary-300 text-sm">Biaya Parkir</th>
                             <td>Rp 5.000</td>
                             <td>Rp 5.000</td>
                             <td>Rp 5.000</td>
                           </tr>
-                           <tr>
+                          <tr>
                             <th className="text-primary-300 text-sm">Transportasi</th>
                             <td colSpan={3}>Rp 1.500.000/Perahu</td>
-                          
-                    
-                          
+                          </tr>
+                          <tr>
+                            <td colSpan={4} className="text-error-700 text-[0.625rem]">
+                              *Harga diatas hanya estimasi untuk transportasi di lokasi
+                            </td>
                           </tr>
                         </tbody>
-                        
                       </table>
                     </div>
                   </details>
                 </li>
                 <hr className="border-primary-500 mt-2 mb-2" />
-                <li>
-                  <div className="flex gap-5 mt-5 ml-14 ms-auto ">
-                    <FontAwesomeIcon size="2x" icon={faInstagram} />
-                    <FontAwesomeIcon size="2x" icon={faFacebook} />
-                    <FontAwesomeIcon size="2x" icon={faXTwitter} />
-                    <FontAwesomeIcon size="2x" icon={faPhone} />
-                  </div>
-                </li>
+
+                <div className="flex gap-5 mt-5 ml-14 ms-auto pb-5 ">
+                  <FontAwesomeIcon size="2x" icon={faInstagram} />
+                  <FontAwesomeIcon size="2x" icon={faFacebook} />
+                  <FontAwesomeIcon size="2x" icon={faXTwitter} />
+                  <FontAwesomeIcon size="2x" icon={faPhone} />
+                </div>
               </ul>
+              
             </aside>
           </div>
         </aside>
