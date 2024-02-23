@@ -6,8 +6,8 @@ const Wisata = () => {
     <div className="bg-[#f1f1f1]">
       <Header />
       <Search />
-      <section className="font-Poppins px-24 py-20">
-        <h4 className="text-2xl text-primary-500 font-bold mb-20 ms-4">Telusuri Tempat - Tempat Wisata di Sumatera Utara</h4>
+      <section className="font-Poppins px-24 ppb-20 pt-10">
+        <h4 className="text-2xl text-primary-500 font-bold mb-10 ms-4">Telusuri Tempat - Tempat Wisata di Sumatera Utara</h4>
         <div className="w-full flex">
           <aside className=" w-1/4">
             <ul className="menu text-lg  w-full  text-primary-500">
