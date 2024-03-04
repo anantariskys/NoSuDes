@@ -1,8 +1,8 @@
 
 import React from "react";
-import Footer from "../components/fragments/Footer";
-import HeroCarousel from "../components/fragments/HeroCarousel";
-import Navbar from "../components/fragments/Navbar";
+
+import HeroCarousel from "../components/HeroCarousel";
+
 import Favorite from "../Section/HomePage/Favorite";
 import Introduction from "../Section/HomePage/Introduction";
 import Kategori from "../Section/HomePage/Kategori";
@@ -16,7 +16,7 @@ const Home = () => {
     <div className="bg-[#f1f1f1]">
      
       <HeroCarousel/>
-      <div className="h-44 w-full bg-[#F1F1F1]"></div>
+      <div className="h-10 md:h-20 lg:h-44 w-full bg-[#F1F1F1]"></div>
       <Introduction/>
       <Favorite/>
       <Kategori/>

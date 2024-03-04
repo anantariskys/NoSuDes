@@ -21,3 +21,7 @@
   } */
   .splide__track--nav > .splide__list > .splide__slide.is-active {
     border: none !important; }
+
+    .text-shadow{
+      text-shadow: 0px 5px 4px rgba(0,0,0,0.79);
+    }

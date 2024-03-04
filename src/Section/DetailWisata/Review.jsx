@@ -35,36 +35,7 @@ const data = [
     nama: "Kuliner",
     haveImage: true,
   },
-  {
-    id: 1,
-    nama: "Aktivitas di Alam",
-    haveImage: true,
-  },
-  {
-    id: 2,
-    nama: "Aktivitas di Kota",
-    haveImage: false,
-  },
-  {
-    id: 3,
-    nama: "Kuliner",
-    haveImage: true,
-  },
-  {
-    id: 4,
-    nama: "Kuliner",
-    haveImage: true,
-  },
-  {
-    id: 5,
-    nama: "Kuliner",
-    haveImage: false,
-  },
-  {
-    id: 6,
-    nama: "Kuliner",
-    haveImage: true,
-  },
+ 
 ];
 const Review = () => {
   return (

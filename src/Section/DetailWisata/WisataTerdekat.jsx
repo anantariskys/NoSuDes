@@ -18,27 +18,27 @@ const data = [
     nama: "Kuliner",
   },
   {
-    id: 1,
+    id: 4,
     nama: "Aktivitas di Alam",
   },
   {
-    id: 2,
+    id: 5,
     nama: "Aktivitas di Kota",
   },
   {
-    id: 3,
+    id: 6,
     nama: "Kuliner",
   },
   {
-    id: 1,
+    id: 7,
     nama: "Aktivitas di Alam",
   },
   {
-    id: 2,
+    id: 8,
     nama: "Aktivitas di Kota",
   },
   {
-    id: 3,
+    id: 9,
     nama: "Kuliner",
   },
 ];

@@ -1,7 +1,7 @@
 import { faInstagram, faFacebook ,faXTwitter} from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../../../public/logoUtamaWhite.png";
+import logo from "../../public/logoUtamaWhite.png";
 
 
 const Footer = () => {
