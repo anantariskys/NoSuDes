@@ -1,10 +1,18 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import logo from "../../public/logoUtama.png";
 import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+    navigate('/');
+  };
+
+ 
 
   return (
     <nav className="navbar px-8  bg-baseColor-500">
@@ -83,7 +91,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <p onClick={logout}>Logout</p>
                 </li>
               </ul>
             </>
