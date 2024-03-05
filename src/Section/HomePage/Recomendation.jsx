@@ -1,6 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SplideSlide, Splide } from "@splidejs/react-splide";
+import { Link } from "react-router-dom";
 import artikelImage from "../../../public/artikel.png";
 
 const data = [
@@ -96,8 +97,8 @@ const Recomendation = () => {
           </SplideSlide>
         ))}
       </Splide>
-      <p className="font-Poppins text-sm md:text-lg font-semibold text-primary-500 md:mt-20 mt-10 text-right px-5 md:px-28">Lihat Semua <span><FontAwesomeIcon icon={faArrowRight}/></span></p>
-
+     <Link to={'/artikel'}><p className="font-Poppins text-sm md:text-lg font-semibold text-primary-500 md:mt-20 mt-10 text-right px-5 md:px-28">Lihat Semua <span><FontAwesomeIcon icon={faArrowRight}/></span></p>
+     </Link>
     </div>
   );
 };

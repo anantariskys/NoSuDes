@@ -142,7 +142,7 @@ const Wisata = () => {
                       </div>
                     ) : (
                       <div className="bg-success-900 py-2 px-3 rounded-lg">
-                        <p className="text-baseColor-500 font-semibold text-lg"></p>
+                        <p className="text-baseColor-500 font-semibold text-lg">Gratis</p>
                       </div>
                     )}
                   </div>

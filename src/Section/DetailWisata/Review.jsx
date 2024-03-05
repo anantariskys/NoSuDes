@@ -2,6 +2,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRight, faHeart as faHeartSolid, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useState } from "react";
 import bukitImage from "../../../public/bukit.png";
 
 const data = [
@@ -38,6 +39,7 @@ const data = [
  
 ];
 const Review = () => {
+  const [data,setData] = useState([]);
   return (
     <section className="w-full">
       <h1 className="font-semibold text-2xl text-primary-500 font-Poppins my-16 px-24">Apa kata traveler yang pernah berkunjung?</h1>

@@ -71,8 +71,8 @@ const Detail = ({ data }) => {
 
   return (
     <section>
-      <main className="w-5/6  bg-primary-50 flex rounded-lg mx-auto py-10 px-10 gap-10">
-        <div className="w-3/5 ">
+      <main className="w-5/6  bg-primary-50 flex lg:flex-row flex-col-reverse rounded-lg mx-auto py-10 px-10 gap-10">
+        <div className="lg:w-3/5 ">
           {data && <ThumbnailCarousel attraction_photos={data.attraction_photos} />}
           <div className="mt-20  font-Poppins">
             <h4 className="text-2xl text-primary-700 font-semibold">Detail Tempat</h4>
@@ -80,7 +80,7 @@ const Detail = ({ data }) => {
             <article className="flex flex-col gap-5 text-sm font-semibold text-primary-700 text-justify">{data && data.description}</article>
           </div>
         </div>
-        <aside className="w-2/5  ">
+        <aside className="lg:w-2/5  ">
           <div className="bg-baseColor-500 rounded-lg px-4 pt-10 w-full">
             <div className="flex justify-between items-center">
               {data && data.maps_detail && <Rating rating={data.maps_detail.rating} />}

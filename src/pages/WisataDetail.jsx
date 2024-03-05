@@ -52,7 +52,7 @@ const WisataDetail = () => {
           <Detail data={data} />
         </>
       )}
-      <Review />
+      <Review id={id} />
       <Rekomendasi />
 
       <WisataTerdekat />

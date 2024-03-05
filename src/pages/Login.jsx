@@ -55,7 +55,7 @@ const Login = () => {
   return (
     <div className="hero min-h-screen w-full bg-baseColor-500">
       <div className="flex w-full h-full flex-col lg:flex-row">
-        <div className="w-1/2">
+        <div className="w-1/2 hidden lg:block">
           <Carousel indicators={false} className="h-full rounded-none">
             <img loading="lazy" src={image1} className="h-full aspect-auto rounded-none" alt="CarouselImage" />
             <img loading="lazy" src={image2} alt="CarouselImage" />
@@ -63,10 +63,10 @@ const Login = () => {
             <img loading="lazy" src={image4} alt="CarouselImage" />
           </Carousel>
         </div>
-        <div className="w-1/2 flex justify-center items-center">
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
           <div className="card w-4/5 ">
-            <img loading="lazy" src={logoUtama} draggable={false} alt="logoUtama" className="w-2/5 mx-auto aspect-auto" />
-            <h3 className="card-title font-Poppins text-4xl font-semibold text-primary-500 mx-auto">Selamat datang kembali!</h3>
+            <img loading="lazy" src={logoUtama} draggable={false} alt="logoUtama" className="w-4/5 lg:w-2/5 mx-auto aspect-auto" />
+            <h3 className="card-title font-Poppins text-xl lg:text-4xl font-semibold text-primary-500 mx-auto">Selamat datang kembali!</h3>
             <form onSubmit={handleSubmit} className="card-body font-Poppins">
               <div className="form-control mb-2">
                 <label className="input input-bordered flex items-center gap-2">

@@ -6,7 +6,7 @@ import logo from "../../public/logoUtamaWhite.png";
 
 const Footer = () => {
   return (
-    <footer className="flex px-44 py-10 bg-primary-500 text-baseColor-500">
+    <footer className="flex md:flex-row flex-col md:px-44 md:py-10 bg-primary-500 text-baseColor-500">
       <aside >
         <img src={logo} className="w-2/4" alt="imageLogo" loading="lazy" />
         <div className="flex gap-5 mt-5 ml-14 ">

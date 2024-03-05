@@ -23,24 +23,27 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <Link to={"/wisata"} className="text-lg font-semibold">
+              Wisata
+            </Link>
+          </li>
+          <li>
+            <Link to={"/aktivitas"} className="text-lg font-semibold">
+              Aktivitas
+            </Link>
+          </li>
+          <li>
+            <Link to={"/cerita"} className="text-lg font-semibold">
+              Cerita
+            </Link>
+          </li>
+          <li>
+            <Link to={"/artikel"} className="text-lg font-semibold">
+              Artikel
+            </Link>
+          </li>
           </ul>
         </div>
         <img loading="lazy" src={logo} className="w-[35%] aspect-auto  " alt="logo" />
@@ -67,12 +70,7 @@ const Navbar = () => {
               Artikel
             </Link>
           </li>
-          <li>
-            <select className="border-none text-lg font-semibold bg-transparent focus:ring-0 ">
-              <option value={"ID"}>ID</option>
-              <option value={"EN"}>EN</option>
-            </select>
-          </li>
+        
         </ul>
       </div>
       <div className="navbar-end">

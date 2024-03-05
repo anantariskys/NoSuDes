@@ -5,15 +5,17 @@ import { TabItem } from "flowbite-react";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../public/reviewHeader.png";
 import ReviewCard from "../components/ReviewCard";
+import { useAuth } from "../hooks/useAuth";
 
 const Cerita = () => {
   const [filter, setFilter] = useState("Semua");
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [wisata, setWisata] = useState([]);
+  const {isAuthenticated} = useAuth();
 
   useEffect(() => {
     console.log(filter);
@@ -63,6 +65,26 @@ const Cerita = () => {
   const [reviewText, setReviewText] = useState("");
   const [photo, setPhoto] = useState("");
   const [selectedId,setSelectedId] = useState("")
+  const navigate = useNavigate();
+
+  const handleLike = async () => {
+    try {
+      const response = await axios.delete(
+        `https://aws.dvnnfrr.my.id/reviews/likes/a874f6b6-a3e8-45e7-b4d1-33e396440660`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer : ${window.localStorage.getItem("token")}`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
 
 
@@ -76,6 +98,10 @@ const Cerita = () => {
     
     if (photo) {
       formData.append("photo", photo);
+    }
+
+    if (!isAuthenticated) {
+        navigate('/login')
     }
 
     try {
@@ -95,13 +121,13 @@ const Cerita = () => {
 
   return (
     <div className="bg-[#F1F1F1]">
-      <header className="w-full h-[70vh] flex justify-center items-center">
+      <header className="w-full h-[30vh] lg:h-[70vh] flex justify-center items-center">
         <div className="flex w-4/5 aspect-[16/5] mx-auto bg-[#86A6D3] rounded-lg relative ">
           <img loading="lazy" src={image} className="w-1/2 aspect-auto " alt="image" />
           <div className="h-full w-2/4 absolute left-0 top-0 bg-gradient-to-r to-[#86A6D3] from-transparent"></div>
           <div className="w-full h-full flex flex-col justify-center py-10 gap-12 items-center relative">
             <div className="h-full w-full absolute left-0 top-0 bg-gradient-to-r to-[#277BF2] from-[#86A6D3]"></div>
-            <h4 className="text-2xl drop-shadow-2xl px-10 font-bold font-Poppins text-center  text-baseColor-500 z-20 relative">Traveler! Ayo Bagikan Ceritamu</h4>
+            <h4 className="text-xs md:text-2xl drop-shadow-2xl md::px-10 font-bold font-Poppins text-center  text-baseColor-500 z-20 relative">Traveler! Ayo Bagikan Ceritamu</h4>
 
             <input type="checkbox" id="my_modal_7" className="modal-toggle" />
             <div className="modal" role="dialog">
@@ -149,9 +175,9 @@ const Cerita = () => {
               </label>
             </div>
 
-            <label htmlFor="my_modal_7" className="input input-xs md:input-md  border-2 mx-auto w-3/4 md:w-4/5  z-20  focus-within:border-base-200 focus-within:outline-none  rounded-2xl   text-primary-300 flex items-center md:gap-2">
+            <label htmlFor="my_modal_7" className="input input-xs md:input-md  border-2 mx-auto w-full md:w-4/5  z-20  focus-within:border-base-200 focus-within:outline-none  rounded-2xl   text-primary-300 flex items-center md:gap-2">
               <FontAwesomeIcon icon={faPencil} />
-              <p type="text" className="grow border-none font-Poppins text-lg font-semibold ">
+              <p type="text" className="grow border-none w-full font-Poppins text-[0.625rem] lg:text-lg font-semibold ">
                 Apa yang ingin kamu ceritakan?
               </p>
             </label>
@@ -175,7 +201,7 @@ const Cerita = () => {
           </div>
         </div>
         <section className="py-16">
-          <label className="input border-2 mx-auto w-1/2 border-primary-500 rounded-2xl focus-within:border-primary-500 focus-within:outline-none text-primary-500 flex items-center gap-2">
+          <label className="input border-2 mx-auto w-4/5 md:w-1/2 border-primary-500 rounded-2xl focus-within:border-primary-500 focus-within:outline-none text-primary-500 flex items-center gap-2">
             <FontAwesomeIcon icon={faSearch} />
             <input type="text" className="grow border-none focus:ring-0 focus:outline-none font-Poppins text-lg font-semibold placeholder-poppins " placeholder="Cari yang sesuai budget" />
           </label>
@@ -221,10 +247,10 @@ const Cerita = () => {
           <span className="loading loading-dots loading-sm text-primary-500"></span>
         </div>
       ) : (
-        <main className="w-full mx-auto px-10 py-20 flex flex-wrap justify-center   gap-5">
+        <main className="w-full mx-auto px-10 py-20 flex flex-wrap    gap-5">
           {data.map((item, index) => (
             <div key={index}>
-              <ReviewCard date={item.date_created} id={item.review_id} name={item.attraction_detail.name} photo={item.photo_url} review={item.review_text} username={item.user_detail.username} />
+              <ReviewCard date={item.date_created} id={item.review_id} name={item.attraction_detail.name} photo={item.photo_url} review={item.review_text} username={item.user_detail.username} handleLike={handleLike}/>
             </div>
           ))}
         </main>
